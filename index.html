@@ -7,7 +7,25 @@
     <title>Form</title>
 </head>
 <body>
-
+    <div class="card">
+        <h2>Add Blog Entry</h2>
+        <form method="POST">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="AwesomeBlogger123" />
+          </div>
+          <div class="input-group">
+            <label for="title">Blog Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter Awesome Blog Title" />
+          </div>
+          <div class="input-group">
+            <label for="content">Blog's Content</label>
+            <input type="text" name="content" id="content" placeholder="Enter awesome blog content" />
+          </div>
+          <div id="msg"></div>
+          <button id="add-entry">Add Blog Entry</button>
+        </form>
+      </div>
     <script src="./assets/js/form.js"></script>
 </body>
 </html>
