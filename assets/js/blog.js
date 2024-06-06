@@ -18,3 +18,25 @@ themeSwitcher.addEventListener('click', function () {
     container.setAttribute('class', 'dark');
   }
 });
+
+// Access back button
+const back = document.querySelector('.backBtn');
+
+// Redirect to form landing page on back button click
+backBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  location.href = 'index.html';
+});
+
+// This function is being called below and will run when the page loads.
+function init() {
+  // Get stored blog post data from localStorage
+  const storedBlogData = JSON.parse(localStorage.getItem('blogData'));
+
+  // Render list of blog data
+  renderBlogData();
+};
+
+// Calls init to retrieve data and render it to the page on load
+init();

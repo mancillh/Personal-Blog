@@ -12,24 +12,24 @@ function displayMessage(type, message) {
 addBlogEntryButton.addEventListener('click', function (event) {
   event.preventDefault();
 
-  // create user object from submission of blog post data
-  const user = {
+  // create blogData object from submission of blog post data
+  const blogData = {
     userName: userNameInput.value.trim(),
     title: titleInput.value.trim(),
     content: contentInput.value.trim(),
   };
 
-  if (user.userName === '') {
+  if (blogData.userName === '') {
     displayMessage('error', 'Username cannot be blank');
-  } else if (user.title === '') {
+  } else if (blogData.title === '') {
     displayMessage('error', 'Title cannot be blank');
-  } else if (user.content === '') {
+  } else if (blogData.content === '') {
     displayMessage('error', 'Blog Content cannot be blank');
   } else {
     displayMessage('success', 'Thanks for adding your awesome blog post!')};
 
   // set new blog post data to local storage
-  localStorage.setItem('user', JSON.stringify(user));
+  localStorage.setItem('blogData', JSON.stringify(blogData));
   console.log(localStorage);
   
   //redirect to blog Homepage
