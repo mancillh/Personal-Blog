@@ -1,18 +1,16 @@
-const firstNameInput = document.querySelector('#first-name');
-const lastNameInput = document.querySelector('#last-name');
-const emailInput = document.querySelector('#email');
-const passwordInput = document.querySelector('#password');
-const signUpButton = document.querySelector('#sign-up');
+const userNameInput = document.querySelector('#username');
+const titleInput = document.querySelector('#title');
+const contentInput = document.querySelector('#content');
+const addBlogEntryButton = document.querySelector('#add-entry');
 
 signUpButton.addEventListener('click', function (event) {
   event.preventDefault();
 
   // create user object from submission
   const user = {
-    firstName: firstNameInput.value.trim(),
-    lastName: lastNameInput.value.trim(),
-    email: emailInput.value.trim(),
-    password: passwordInput.value.trim(),
+    userName: userNameInput.value.trim(),
+    title: titleInput.value.trim(),
+    content: contentInput.value.trim(),
   };
 
   // set new submission to local storage
