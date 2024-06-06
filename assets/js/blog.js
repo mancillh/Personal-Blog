@@ -33,9 +33,15 @@ backBtn.addEventListener('click', function (event) {
 function init() {
   // Get stored blog post data from localStorage
   const storedBlogData = JSON.parse(localStorage.getItem('blogData'));
-
+console.log(storedBlogData);
   // Render list of blog data
   renderBlogData();
+  if (storedBlogData === '') {
+    console.log("There are no blogs to display.");
+    return;
+  } else {
+.append('<li>${}</li>')
+  }
 };
 
 // Calls init to retrieve data and render it to the page on load

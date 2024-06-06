@@ -5,11 +5,13 @@ body {
   
   #backBtn {
     float: left;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     padding: 14px 16px;
     border: solid 2px;
     border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #c7f9cc;
   }
   
   p {
@@ -26,6 +28,7 @@ body {
     padding-bottom: 100px;
     bottom: 0px;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
   .footer a {
@@ -37,13 +40,14 @@ body {
     border-color: black;
     width: 400px;
     background-color: #57cc99;
+    float: right;
   }
-  
+
   /* Dark Mode */
   .dark {
     background-color:#22577a;
     height: 100vh;
-    color: #57cc99
+    color: whitesmoke;
   }
   
   .dark li a {
@@ -76,6 +80,10 @@ body {
   .light .footer a {
     color: black;
   } 
+
+  .light #backBtn {
+    background-color: #38a3a5;
+  }
 
   /* Styling the Switch button */
   .switch {
@@ -126,26 +134,30 @@ body {
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(60px);
-    -ms-transform: translateX(60px);
-    transform: translateX(60px);
+    -webkit-transform: translateX(80px);
+    -ms-transform: translateX(80px);
+    transform: translateX(80px);
   }
   
   /* Rounded sliders */
   .slider.round {
+    margin-top: 20px;
+    height: 20px;
     border-radius: 34px;
   }
   
   .slider.round:before {
+    margin-top: 10px;
     border-radius: 50%;
   }
   
   .row {
     margin: 20px;
+    margin-left: 100px;
     display: flex;
   }
   .col {
-    margin: 20px;
+    margin: 1px auto;
   }
   
   
