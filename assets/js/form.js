@@ -14,7 +14,7 @@ addBlogEntryButton.addEventListener('click', function (event) {
 
   // create blogData object from submission of blog post data
   const blogData = {
-    userName: userNameInput.value.trim(),
+    username: userNameInput.value.trim(),
     title: titleInput.value.trim(),
     content: contentInput.value.trim(),
   };
