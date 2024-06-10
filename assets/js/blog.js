@@ -34,6 +34,7 @@ let blogInfoArray = [];
 function init() {
   // If blog data was retrieved from localStorage, update the array to include it. Otherwise, create a pop up alerting user no posts are available.
   const storedBlogData = JSON.parse(localStorage.getItem('blogData'));
+    
   if (storedBlogData) {
     blogInfoArray.push(storedBlogData);
   } else {
@@ -44,16 +45,16 @@ function init() {
 const bloglist = document.querySelector('#bloglist');
 
 function renderBlogData() {
-  bloglist.innerHTML = '';
-
-  for (let i = 0; i < blogInfoArray.length; i++) {
+   for (let i = 0; i < blogInfoArray.length; i++) {
     let post = blogInfoArray[i];
+    console.log(post);
     const p = document.createElement('p');
     p.innerText = `Username: ${post.username} 
-    Title: ${post.title} 
-    Content: ${post.content}`;
+                   Title: ${post.title} 
+                   Content: ${post.content}`;
     p.setAttribute('data-index', i);
     bloglist.appendChild(p);
+    //bloglist.appendChild(document.createElement("br"));
     }
   };
   

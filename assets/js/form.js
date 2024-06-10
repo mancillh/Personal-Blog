@@ -9,12 +9,18 @@ function displayMessage(type, message) {
   msgDiv.setAttribute('class', type);
 }
 
-// Function to save form data to localStorage
-function saveFormData(blogData) {
-  let existingData = JSON.parse(localStorage.getItem('blogData')) || {};
-  let updatedData = { ...existingData, ...blogData };
-  localStorage.setItem('blogData', JSON.stringify(updatedData));
-}
+let savedData = [];
+
+function saveData() {
+  // If blog data was retrieved from localStorage, update the array to include it. 
+  const storedBlogData = JSON.parse(localStorage.getItem('blogData'));
+  
+  if (storedBlogData) {
+    savedData.push(storedBlogData);
+  }
+};
+
+saveData();
 
 addBlogEntryButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -35,10 +41,12 @@ addBlogEntryButton.addEventListener('click', function (event) {
   } else {
     displayMessage('success', 'Thanks for adding your awesome blog post!')};
 
-  // set new blog post data to local storage
-  localStorage.setItem('blogData', JSON.stringify(blogData));
+    savedData.push(blogData);
+    console.log(savedData);
 
-  saveFormData(blogData);
+  // set new blog post data to local storage
+  localStorage.setItem('blogData', JSON.stringify(savedData));
+ 
   //redirect to blog Homepage
   location.href = 'blog.html';
 });
