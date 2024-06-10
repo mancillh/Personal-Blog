@@ -14,10 +14,6 @@ body {
     background-color: #c7f9cc;
   }
   
-  p {
-    font-size: 20px;
-  }
-  
   .menu {
     width: 100%;
   }
@@ -35,14 +31,6 @@ body {
     color: white;
   }
 
-  .toggle {
-    border-style: solid;
-    border-color: black;
-    width: 400px;
-    background-color: #57cc99;
-    float: right;
-  }
-
   /* Dark Mode */
   .dark {
     background-color:#22577a;
@@ -56,10 +44,6 @@ body {
   
   .dark li a:hover {
     background-color: #111;
-  }
-
-  .dark .col{
-    color: black;
   }
 
   /* Light Mode */
@@ -88,9 +72,10 @@ body {
   /* Styling the Switch button */
   .switch {
     position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 20px;
+    float: right;
+    width: 50px;
+    height: 30px;
+    margin-right: 20px;
   }
   
   /* Hide default HTML checkbox */
@@ -134,11 +119,18 @@ body {
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(80px);
-    -ms-transform: translateX(80px);
-    transform: translateX(80px);
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
   }
-  
+
+  header {
+    margin: 0 20px;
+    margin-left: 100px;
+    margin-right: 400px;
+    display: flex;
+  }
+
   /* Rounded sliders */
   .slider.round {
     margin-top: 20px;
@@ -150,14 +142,14 @@ body {
     margin-top: 10px;
     border-radius: 50%;
   }
+
+  ul {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
   
-  .row {
-    margin: 20px;
-    margin-left: 100px;
-    display: flex;
-  }
-  .col {
-    margin: 1px auto;
-  }
+ 
+
+
   
   

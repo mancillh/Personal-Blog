@@ -29,20 +29,31 @@ backBtn.addEventListener('click', function (event) {
   location.href = 'index.html';
 });
 
+let blogInfoArray = [];
 // This function is being called below and will run when the page loads.
 function init() {
-  // Get stored blog post data from localStorage
+  // If blog data was retrieved from localStorage, update the array to include it. Otherwise, create a pop up alerting user no posts are available.
   const storedBlogData = JSON.parse(localStorage.getItem('blogData'));
-console.log(storedBlogData);
-  // Render list of blog data
-  renderBlogData();
-  if (storedBlogData === '') {
-    console.log("There are no blogs to display.");
-    return;
+  if (storedBlogData) {
+    blogInfoArray.push(storedBlogData);
   } else {
-.append('<li>${}</li>')
+    alert("There are no blog posts at the moment. Check back later!");
   }
 };
 
-// Calls init to retrieve data and render it to the page on load
+const bloglist = document.querySelector('#bloglist');
+
+function renderBlogData() {
+  bloglist.innerHTML = '';
+
+  for (let i = 0; i < blogInfoArray.length; i++) {
+    let post = blogInfoArray[i];
+    const li = document.createElement('li');
+    li.textContent = `Username: ${post.username} Title: ${post.title} Content: ${post.content}`;
+    li.setAttribute('data-index', i);
+    bloglist.appendChild(li);
+    }
+  };
+  
 init();
+renderBlogData();
