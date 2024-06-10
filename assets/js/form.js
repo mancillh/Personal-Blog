@@ -9,6 +9,13 @@ function displayMessage(type, message) {
   msgDiv.setAttribute('class', type);
 }
 
+// Function to save form data to localStorage
+function saveFormData(blogData) {
+  let existingData = JSON.parse(localStorage.getItem('blogData')) || {};
+  let updatedData = { ...existingData, ...blogData };
+  localStorage.setItem('blogData', JSON.stringify(updatedData));
+}
+
 addBlogEntryButton.addEventListener('click', function (event) {
   event.preventDefault();
 
@@ -30,8 +37,8 @@ addBlogEntryButton.addEventListener('click', function (event) {
 
   // set new blog post data to local storage
   localStorage.setItem('blogData', JSON.stringify(blogData));
-  console.log(localStorage);
-  
+
+  saveFormData(blogData);
   //redirect to blog Homepage
   location.href = 'blog.html';
 });

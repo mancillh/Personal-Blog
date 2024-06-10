@@ -18,19 +18,6 @@ body {
     width: 100%;
   }
   
-  .footer {
-    width: 100%;
-    position: absolute;
-    padding-bottom: 100px;
-    bottom: 0px;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-
-  .footer a {
-    color: white;
-  }
-
   /* Dark Mode */
   .dark {
     background-color:#22577a;
@@ -143,10 +130,26 @@ body {
     border-radius: 50%;
   }
 
-  ul {
+  p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
+    margin: 20px;
+    line-height: 2;
   }
+  
+  .footer {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100px;
+    bottom: 0px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .footer a {
+    color: white;
+  }
+
   
  
 

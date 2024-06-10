@@ -48,10 +48,12 @@ function renderBlogData() {
 
   for (let i = 0; i < blogInfoArray.length; i++) {
     let post = blogInfoArray[i];
-    const li = document.createElement('li');
-    li.textContent = `Username: ${post.username} Title: ${post.title} Content: ${post.content}`;
-    li.setAttribute('data-index', i);
-    bloglist.appendChild(li);
+    const p = document.createElement('p');
+    p.innerText = `Username: ${post.username} 
+    Title: ${post.title} 
+    Content: ${post.content}`;
+    p.setAttribute('data-index', i);
+    bloglist.appendChild(p);
     }
   };
   
