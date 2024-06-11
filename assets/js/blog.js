@@ -29,34 +29,31 @@ backBtn.addEventListener('click', function (event) {
   location.href = 'index.html';
 });
 
-let blogInfoArray = [];
-// This function is being called below and will run when the page loads.
-function init() {
-  // If blog data was retrieved from localStorage, update the array to include it. Otherwise, create a pop up alerting user no posts are available.
-  const storedBlogData = JSON.parse(localStorage.getItem('blogData'));
-    
-  if (storedBlogData) {
-    blogInfoArray.push(storedBlogData);
-  } else {
-    alert("There are no blog posts at the moment. Check back later!");
-  }
-};
-
-const bloglist = document.querySelector('#bloglist');
+const displayList = document.querySelector('#displayList');
+let bloglist = [];
 
 function renderBlogData() {
-   for (let i = 0; i < blogInfoArray.length; i++) {
-    let post = blogInfoArray[i];
-    console.log(post);
+   for (let i = 0; i < bloglist.length; i++) {
+  const post = bloglist[i];
+    
     const p = document.createElement('p');
-    p.innerText = `Username: ${post.username} 
-                   Title: ${post.title} 
-                   Content: ${post.content}`;
+    p.textContent = post;
     p.setAttribute('data-index', i);
-    bloglist.appendChild(p);
-    //bloglist.appendChild(document.createElement("br"));
-    }
-  };
-  
+    displayList.appendChild(p);
+    };
+};
+
+function init() {
+  // Get localStorage
+  const saved = JSON.parse(localStorage.getItem("storage"));
+
+  // If blog data is retrieved from localStorage, update the bloglist array 
+  if (saved !== null) {
+    bloglist = saved;
+  }
+
+  // This is a helper function that will render blog data to the DOM
+  renderBlogData();
+}
+
 init();
-renderBlogData();

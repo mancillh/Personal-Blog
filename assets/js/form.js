@@ -9,24 +9,18 @@ function displayMessage(type, message) {
   msgDiv.setAttribute('class', type);
 }
 
-let savedData = [];
+const bloglist = [];
 
-function saveData() {
-  // If blog data was retrieved from localStorage, update the array to include it. 
-  const storedBlogData = JSON.parse(localStorage.getItem('blogData'));
-  
-  if (storedBlogData) {
-    savedData.push(storedBlogData);
-  }
+const getSavedData = JSON.parse(localStorage.getItem("storage"));
+if (getSavedData !== null) {
+  bloglist.push(getSavedData);
 };
-
-saveData();
 
 addBlogEntryButton.addEventListener('click', function (event) {
   event.preventDefault();
-
+  
   // create blogData object from submission of blog post data
-  const blogData = {
+  let blogData = {
     username: userNameInput.value.trim(),
     title: titleInput.value.trim(),
     content: contentInput.value.trim(),
@@ -41,15 +35,15 @@ addBlogEntryButton.addEventListener('click', function (event) {
   } else {
     displayMessage('success', 'Thanks for adding your awesome blog post!')};
 
-    savedData.push(blogData);
-    console.log(savedData);
-
+    bloglist.push(blogData);
+    
   // set new blog post data to local storage
-  localStorage.setItem('blogData', JSON.stringify(savedData));
- 
+  localStorage.setItem("storage", JSON.stringify(bloglist));
+  
   //redirect to blog Homepage
   location.href = 'blog.html';
 });
+
 
 
  
