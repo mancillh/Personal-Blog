@@ -9,12 +9,7 @@ function displayMessage(type, message) {
   msgDiv.setAttribute('class', type);
 }
 
-const bloglist = [];
-
-const getSavedData = JSON.parse(localStorage.getItem("storage"));
-if (getSavedData !== null) {
-  bloglist.push(getSavedData);
-};
+const bloglist = JSON.parse(localStorage.getItem("storage")) || [];
 
 addBlogEntryButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -33,13 +28,15 @@ addBlogEntryButton.addEventListener('click', function (event) {
   } else if (blogData.content === '') {
     displayMessage('error', 'Blog Content cannot be blank');
   } else {
-    displayMessage('success', 'Thanks for adding your awesome blog post!')};
+    displayMessage('success', 'Thanks for adding your awesome blog post!')
+  };
 
-    bloglist.push(blogData);
+  bloglist.push(blogData);
+  console.log(bloglist);
     
   // set new blog post data to local storage
   localStorage.setItem("storage", JSON.stringify(bloglist));
-  
+
   //redirect to blog Homepage
   location.href = 'blog.html';
 });
