@@ -17,7 +17,7 @@ blog.css - styling for the blog posts page
 form.css - styling for the form
 styles.css - styling for the light mode/dark mode switch and the back button on the blog posts page
 
-URL of deployed site: mancillh.github.io/Personal-Blog
+URL of deployed site: [Hannah Mancill's Personal Blog](https://mancillh.github.io/Personal-Blog/)
 
 Screenshots:
 ![Add Blog Entry Form](images/Add_Blog_Entry_Form.png)
