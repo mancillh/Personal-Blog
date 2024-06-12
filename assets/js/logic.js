@@ -1,3 +1,5 @@
+// Logic.js includes the code for the light mode/dark mode toggle and the back button
+
 // Access toggle switch HTML element
 const themeSwitcher = document.querySelector('#theme-switcher');
 const container = document.querySelector('.container');

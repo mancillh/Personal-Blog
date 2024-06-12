@@ -1,3 +1,6 @@
+/* styles.css is the styling for the back button, the light and dark modes, and the light mode/dark mode switch. */
+
+/* back button */
 #backBtn {
     float: left;
     margin: 20px;
@@ -8,7 +11,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #c7f9cc;
   }
-   
+ 
   /* Dark Mode */
   .dark {
     background-color:#22577a;
@@ -16,38 +19,38 @@
     color: whitesmoke;
   }
   
-  .dark li a {
-    color: #c7f9cc;
-  }
-  
-  .dark li a:hover {
-    background-color: #111;
-  }
-
-  /* Light Mode */
+   /* Light Mode */
+   /* changes font color and background color of header in light mode*/
   .light {
     background-color: #c7f9cc;
     color: #08131b;
     height: 100vh;
   }
-  
-  .light li a {
-    color: black;
+
+  /* changes font color and background color of blog posts (the body of the page) in light mode*/
+  .light #displayList {
+    background-color: #c7f9cc;
+    color: #08131b;
+    margin: -8px;
   }
   
-  .light li a:hover {
-    background-color: #38a3a5;
+  /* changes font color and background color of footer in light mode*/
+  .light .footer {
+    background-color: #c7f9cc;
+    color: #08131b;
   }
 
+  /* changes font color of footer's portfolio link in light mode*/
   .light .footer a {
     color: black;
   } 
 
+  /* changes background color of back button in light mode*/
   .light #backBtn {
     background-color: #38a3a5;
   }
 
-  /* Styling the Switch button */
+  /* position of light mode/dark mode toggle on page */
   .switch {
     position: relative;
     float: right;
@@ -63,7 +66,7 @@
     height: 0;
   }
   
-  /* The slider */
+  /* position of "background" part of switch */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -75,7 +78,8 @@
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+
+  /* position and dimensions of slider inside switch */
   .slider:before {
     position: absolute;
     content: "";
@@ -88,27 +92,31 @@
     transition: .2s;
   }
   
+  /* turns switch white in light mode */
   input:checked + .slider {
     background-color: white;
   }
   
+  /* places shadow on switch to make it more visible */
   input:focus + .slider {
-    box-shadow: 0 0 1px #38a3a5;
+    box-shadow: 0 0 3px #38a3a5;
   }
   
+  /* how far slider inside switch moves from left to right */
   input:checked + .slider:before {
     -webkit-transform: translateX(30px);
     -ms-transform: translateX(30px);
     transform: translateX(30px);
   }
   
-  /* Rounded sliders */
+  /* rounds the shape of the switch */
   .slider.round {
     margin-top: 20px;
     height: 20px;
     border-radius: 34px;
   }
   
+  /* rounds the shape of the slider */
   .slider.round:before {
     margin-top: 10px;
     border-radius: 50%;

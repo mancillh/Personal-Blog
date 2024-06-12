@@ -1,22 +1,26 @@
+/* form.css is the styling for the form only. */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* background of web page*/
 body {
-  font-size: 16px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: #22577a;
 }
 
-h2 {
+/* Form Title "Add Blog Entry" */
+h1 {
   font-size: 3em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0px;
   margin-top: 0.45em;
   margin-bottom: 0.45em;
 }
 
+/* "Add Blog Entry" button*/
 button {
   background-color: #38a3a5;
   border-radius: 8px;
@@ -33,15 +37,16 @@ button {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* form labels "Username", "Blog Title", "Blog's Content"*/
 .input-group {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 22px;
+  color: #212121;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-label {
-  color: #212121;
-}
-
+/* form input boxes*/
 input {
   background-color: whitesmoke;
   border-radius: 3px;
@@ -63,6 +68,7 @@ input {
   width: 100%;
 }
 
+/* light green box surrounding form */
 .card {
   display: block;
   background-color:#c7f9cc;
@@ -75,6 +81,7 @@ input {
   width: 60vw;
 }
 
+/* extends light green box surrounding form to include the button */
 .card::after {
   content: " ";
   display: block;
