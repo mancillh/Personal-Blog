@@ -1,13 +1,13 @@
-// Logic.js includes the code for the light mode/dark mode toggle and the back button
+// Logic.js includes the code for the light mode/dark mode switch and the back button
 
-// Access toggle switch HTML element
+// Access switch switch HTML element
 const themeSwitcher = document.querySelector('#theme-switcher');
 const container = document.querySelector('.container');
 
 // Set default mode to dark
 let mode = 'dark';
 
-// Listen for a click event on toggle switch
+// Listen for a click event on switch switch
 themeSwitcher.addEventListener('click', function () {
   // If mode is dark, apply light background
   if (mode === 'dark') {
