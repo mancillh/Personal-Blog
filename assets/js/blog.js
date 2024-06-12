@@ -10,7 +10,9 @@ function renderBlogData() {
     const postTitle = document.createElement('h2');
     const postContent = document.createElement('p');
     const postUser = document.createElement('h4');
-
+    const line = document.createElement("hr"); 
+      line.setAttribute("width", "90%");
+   
     postTitle.textContent = post.title;
     postContent.textContent = post.content;
     postUser.textContent = ` created by ${post.username}`;
@@ -18,7 +20,8 @@ function renderBlogData() {
     displayList.append(
       postTitle, 
       postContent,
-      postUser
+      postUser,
+      line
     );
   };
 };
